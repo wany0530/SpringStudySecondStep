@@ -49,7 +49,7 @@ public class ApplicationContextExtendsFindTest
         org.assertj.core.api.Assertions.assertThat(beansOfType.size()).isEqualTo(2);
         for(String key : beansOfType.keySet())
         {
-            System.out.println("key = " + key + " value = " + beansOfType.get(key));
+            System.out.println("key = " + key + " value : " + beansOfType.get(key));
         }
     }
 
