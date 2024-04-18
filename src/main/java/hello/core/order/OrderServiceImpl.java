@@ -6,10 +6,14 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  */
+
+@Component
 public class OrderServiceImpl implements OrderService
 {
 //    private MemberRepository memberRepository= new MemoryMemberRepository(); //DIP 위반
@@ -17,6 +21,7 @@ public class OrderServiceImpl implements OrderService
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); //DIP 위반 이면서 Fix -> Rate 로 변경시 OCP 위반. 왜냐하면 수정(변경)했으니까ㅋ
     private DiscountPolicy discountPolicy; // DIP 위반 해결.
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy)
     {
         this.memberRepository = memberRepository;
