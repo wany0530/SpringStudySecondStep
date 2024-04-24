@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -15,11 +18,16 @@ import org.springframework.context.annotation.FilterType;
 
          */
 
-        basePackages = "hello.core.member",
+//        basePackages = "hello.core.member",
 //        basePackageClasses = AutoAppConfig.class,
         excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class  )
 )
 public class AutoAppConfig
 {
-
+//    수동 빈 등록과 자동 빈 등록이 충돌했을 경우, 수동빈이 더 우선권을 가진다. 오류가 나지 않음.
+//    @Bean(name = "memoryMemberRepository")
+//    MemberRepository memberRepository()
+//    {
+//        return new MemoryMemberRepository();
+//    }
 }
