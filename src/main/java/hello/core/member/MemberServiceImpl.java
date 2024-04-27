@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class MemberServiceImpl implements MemberService
 {
 //    private final MemberRepository memberRepository = new MemoryMemberRepository(); //DIP 위반
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Autowired //@Autowired는 이전에 테스트에서 했던 ac.getBean(MemberRepository.class)을 쓸수가있다. 즉 자동 의존관계 주입
     public MemberServiceImpl(MemberRepository memberRepository)
